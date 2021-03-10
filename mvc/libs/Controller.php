@@ -9,9 +9,8 @@ class Controller{
             $this->model = new $this->name_model;
         }
     }
-
-    public function index() {
-        $this->view->render(strtolower(get_class($this)) );
+    public function index(){
+        $this->view->render(strtolower(get_class($this)));
     }
 
 }
