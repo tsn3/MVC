@@ -7,6 +7,6 @@ class Catalog_Model extends Model{
     }
 
     public function getList() {
-        return array('LIST' => array('Samsung', 'IPhone', 'Nokif'));
+        return array('LIST' => array('Samsung', 'IPhone', 'Nokia'));
     }
 }

@@ -13,6 +13,10 @@
     <div id="header">
         <a href="/">Главная</a>
         <a href="/catalog/">Каталог</a>
-        <a href="/login/">Войти</a>
+        <? if ( User::isLogin() ): ?>
+            <a href="/login/logout/">Выйти</a>
+        <? else:?>
+            <a href="/login/">Войти</a>
+        <? endif;?>
     </div>
 <div id="main_container">

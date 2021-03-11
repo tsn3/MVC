@@ -2,6 +2,6 @@
 
 class Model{
     public function __construct(){
-//        connect DB
+        $this->db = new Database;
     }
 }

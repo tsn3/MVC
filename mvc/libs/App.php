@@ -1,8 +1,10 @@
 <?php
 
 class App{
-    public function __construct()
-    {
+    public function __construct() {
+
+        session_start();
+
         if ( isset($_GET['url'])){
             $url = explode ('/',rtrim($_GET['url'], '/') );
         } else{
