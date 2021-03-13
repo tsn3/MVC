@@ -18,3 +18,11 @@ p.error {
     padding: 20px;
     background-color: #fff;
 }
+
+.error_input{
+    border-color: red;
+}
+
+.complet_input{
+    border-color: green;
+}

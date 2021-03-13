@@ -1,7 +1,9 @@
-
+            </div>
         </div>
         <div id="footer">
-            Реализация MVC
+            <div class="container">
+                Реализация MVC
+            </div>
         </div>
     </body>
 </html>
