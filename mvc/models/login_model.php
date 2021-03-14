@@ -15,11 +15,9 @@ class Login_Model extends Model{
 
         if ( $sth->rowCount() > 0 ){
             $data = $sth->fetch();
-
             $_SESSION['LOGIN'] = true;
             $_SESSION['USER_ID'] = $data["id"];
             $_SESSION['USER_NAME'] = $data["name"];
-//            var_dump($_SESSION);
             return true;
         } else {
             return false;
@@ -39,7 +37,7 @@ class Login_Model extends Model{
         }
     }
     public function register($data){
-        $sth = $this->db->prepare("INSERT users (login, password, name, email, phone) " . " VALUES (:login, :password, :name, :email, :phone) ");
+        $sth = $this->db->prepare("INSERT users (login, password, name, email, phone) "." VALUES (:login, :password, :name, :email, :phone) ");
         $sth->execute($data);
         var_dump($sth->rowCount());
 
@@ -48,9 +46,5 @@ class Login_Model extends Model{
         }else{
             return false;
         }
-
-
     }
-
-
 }

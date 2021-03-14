@@ -33,10 +33,10 @@ class Login extends Controller
     public function reg(){
 
         if (User::isLogin() ){
-//            echo "{'error':'You dont have permision'}";
             header('location:'.'/account/');
             die;
         }
+
         $error = array();
         $login = htmlspecialchars($_REQUEST['login']);
         $pass_1 = htmlspecialchars($_REQUEST['pass_1']);
@@ -58,7 +58,7 @@ class Login extends Controller
             $error['login'] = false;
         }
         if (count($error) > 0){
-            echo json_encode();
+            echo json_encode($error);
             die;
         }
         $data = array(
@@ -66,7 +66,7 @@ class Login extends Controller
             ':password' => $pass_1,
             ':name ' => $name,
             ':phone' => $phone,
-            ':email' => $email,
+            ':email' => $email
         );
 
         if ($this->model->register($data) ){
