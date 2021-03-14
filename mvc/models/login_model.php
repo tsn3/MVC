@@ -24,9 +24,33 @@ class Login_Model extends Model{
         } else {
             return false;
         }
+    }
 
+    public function loginExist($login){
+        $sth = $this->db->prepare("SELECT id, name FROM users WHERE "
+            . "login = :login");
+        $sth->execute(array(
+            ':login' => $login,
+        ));
+        if ($sth->rowCount() > 0 ){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function register($data){
+        $sth = $this->db->prepare("INSERT users (login, password, name, email, phone) " . " VALUES (:login, :password, :name, :email, :phone) ");
+        $sth->execute($data);
+        var_dump($sth->rowCount());
+
+        if ($sth->rowCount() > 0 ){
+            return true;
+        }else{
+            return false;
+        }
 
 
     }
+
 
 }

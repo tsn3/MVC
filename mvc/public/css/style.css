@@ -24,5 +24,8 @@ p.error {
 }
 
 .complet_input{
-    border-color: green;
+    border-color: greenyellow;
+}
+.block_error, .block_error .pass_error, .block_error .login_error{
+    display: none;
 }

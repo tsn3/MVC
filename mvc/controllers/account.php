@@ -1,6 +1,6 @@
 <?php
 
-class Accaunt extends Controller {
+class Account extends Controller {
     public function __construct()
     {
         if ( User::isLogin() ) {

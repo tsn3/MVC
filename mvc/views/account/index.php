@@ -3,7 +3,7 @@
     Бобро пожаловать, <?=User::getName()?>
 </h1>
 <?php
-echo 'View Accaunt <br/>';
+echo 'View Account <br/>';
 ?>
 <?php require_once $_SERVER ['DOCUMENT_ROOT'].'/views/footer.php';?>
 

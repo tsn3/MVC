@@ -33,6 +33,10 @@
         <div class="h3">
             Регистрация
         </div>
+        <div class="alert alert-danger block_error" role="alert">
+            <span class="pass_error">Пароли не совпадают</span>
+            <span class="login_error">Логин уже существует</span>
+        </div>
         <form name="form_registr" id="form_registr" method="post" action="/login/reg/">
             <label for="login">
                 Логин*
