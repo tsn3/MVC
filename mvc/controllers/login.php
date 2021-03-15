@@ -37,7 +37,7 @@ class Login extends Controller
             die;
         }
 
-        $error = array();
+        $error = array('error' => true);
         $login = htmlspecialchars($_REQUEST['login']);
         $pass_1 = htmlspecialchars($_REQUEST['pass_1']);
         $pass_2 = htmlspecialchars($_REQUEST['pass_2']);
@@ -57,25 +57,25 @@ class Login extends Controller
         if ($this->model->loginExist($login) ){
             $error['login'] = false;
         }
-        if (count($error) > 0){
+        if (count($error) > 1){
             echo json_encode($error);
             die;
         }
         $data = array(
             ':login' => $login,
-            ':password' => $pass_1,
-            ':name ' => $name,
+            ':password' => md5($pass_1),
+            ':name' => $name,
             ':phone' => $phone,
             ':email' => $email
         );
 
         if ($this->model->register($data) ){
-
+            $this->model->login($login, $pass_1);
+            echo json_encode(array('success' => true));
+            die;
         }else{
-
+            echo json_encode(array('success' => false));
+            die;
         }
-        die;
-
     }
-
 }

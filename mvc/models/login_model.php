@@ -7,7 +7,7 @@ class Login_Model extends Model{
     }
 
     public function login ($login, $password){
-        $sth = $this->db->prepare("SELECT id, name FROM users WHERE " . "login = :login AND password = :password");
+        $sth = $this->db->prepare("SELECT id, name, role FROM users WHERE " . "login = :login AND password = :password");
         $sth->execute(array(
             ':login' => $login,
             ':password' => md5($password),
@@ -18,6 +18,7 @@ class Login_Model extends Model{
             $_SESSION['LOGIN'] = true;
             $_SESSION['USER_ID'] = $data["id"];
             $_SESSION['USER_NAME'] = $data["name"];
+            $_SESSION['USER_ROLE'] = $data["role"];
             return true;
         } else {
             return false;
@@ -39,8 +40,6 @@ class Login_Model extends Model{
     public function register($data){
         $sth = $this->db->prepare("INSERT users (login, password, name, email, phone) "." VALUES (:login, :password, :name, :email, :phone) ");
         $sth->execute($data);
-        var_dump($sth->rowCount());
-
         if ($sth->rowCount() > 0 ){
             return true;
         }else{

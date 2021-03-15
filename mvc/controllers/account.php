@@ -7,4 +7,9 @@ class Account extends Controller {
             parent::__construct();
         }
     }
+    public function new_user(){
+        $this->view->arResult['NEW_USER'] =  true;
+        $this->index();
+
+    }
 }

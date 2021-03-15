@@ -37,7 +37,17 @@ $(document).ready(function() {
             dataType: 'json',
             data: data,
             success: function(json){
-                alert ('Load was performed.');
+                if (json.error === true){
+                    if (json.login === false){
+                        $('.block_error, .login_error').show();
+                    }
+                    if (json.pass === false){
+                        $('.block_error, .pass_error').show();
+                    }
+                }
+                if (json.success === true){
+                    location.href = '/account/new_user/';
+                }
             }
         });
     })
