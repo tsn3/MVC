@@ -30,7 +30,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="section_code">Код категории</label>
-                                <input type="text" required="required" class="form-control" name="section_code" id="section_code" placeholder="">
+                                <input type="text" class="form-control" required="required" name="section_code" id="section_code" placeholder="">
                             </div>
                             <div class="form-group">
                                 <label for="parent_section">Родительская категория</label>
