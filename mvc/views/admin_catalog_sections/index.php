@@ -4,10 +4,37 @@
     Управление категориями
 </div>
 
+    <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Имя</th>
+                <th scope="col">Код</th>
+                <th scope="col">Уровень</th>
+                <th scope="col">Родительская категория</th>
+                <th scope="col">Действия</th>
+            </tr>
+            </thead>
+            <tbody>
+            <? foreach ($this->sections_list as $section):?>
+            <tr>
+                <th scope="row"><?=$section['id']?></th>
+                <td><?=$section['name']?></td>
+                <td><?=$section['code']?></td>
+                <td><?=$section['dept_level']?></td>
+                <td><?=$section['parent_id']?></td>
+                <td class="text-end">
+                    <button type="button" class="btn btn-primary btn-sm">Изменить</button>
+                    <button type="button" class="btn btn-danger btn-sm">Удалить</button>
+                </td>
+            </tr>
+            <?endforeach;?>
+            </tbody>
+    </table>
 <br/>
 <br/>
 <row>
-    <div class="col-md-12 text-right">
+    <div class="col-md-12 text-end">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#new_section_modal">
             Добавить категории
         </button>
@@ -22,6 +49,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <div class="alert alert-danger error_danger d-none" role="alert">
+                        Произошла ошибка!
+                    </div>
                     <div class="mx-auto">
                         <form id="form_new_section" method="post" action="/admin_catalog_sections/add/">
                             <div class="form-group">
