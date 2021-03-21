@@ -13,13 +13,14 @@ class Admin_Catalog_Sections extends Controller {
     public function add(){
         $name = htmlspecialchars($_POST['section_name']);
         $code = htmlspecialchars($_POST['section_code']);
-        $perent_id = htmlspecialchars($_POST['parent_section']);
+        $parent_id = htmlspecialchars($_POST['parent_section']);
+        $dept_level = htmlspecialchars($_POST['dept_level']);
         if ($name !='' && $code !=''){
             $params = array(
                 ':name' => $name,
                 ':code' => $code,
-                ':parent_id' => NULL,
-                ':dept_level' => NULL,
+                ':parent_id' => $parent_id,
+                ':dept_level' => $dept_level >= 0 ? $dept_level + 1 : 0,
             );
             if ($id = $this->model->add($params) ){
                 echo json_encode(array("error" => false, 'success' => true, "new_id" => $id));
@@ -47,13 +48,13 @@ class Admin_Catalog_Sections extends Controller {
         }
     }
 
-    public function get_tree_for_select($data, $level = 0, $pid = ''){
+    public function get_tree_for_select($data, $level = 0, $pid = 0){
         foreach ($data as $row){
             if ($row['parent_id'] == $pid){
                 $this->tree_for_select .=
                     "<option value=".$row["id"].
                     " data-dept-level=".$row["dept_level"].">"
-                    .str_pad('', $level, '- ').$row["name"]."</option>";
+                    .str_pad('', $level, '--').$row["name"]."</option>";
                 $this->get_tree_for_select($data, $level +1, $row['id'] );
             }
         }

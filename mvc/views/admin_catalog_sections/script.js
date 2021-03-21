@@ -24,12 +24,14 @@ function add_new_section() {
         form.addClass('was-validated');
     }else {
         data = form.serialize();
-        data.dept_level = form.find('#parent_section option:selected').attr('data-dept-level');
+        dept_level = form.find('#parent_section option:selected').attr('data-dept-level');
+        data = data + "&dept_level=" + dept_level;
+        console.log(data)
         $.ajax({
             url: form.attr('action'),
             type: form.attr('method'),
             dataType: 'json',
-            data: form.serialize(),
+            data: data,
             success: function (json) {
                 if(json.error){
                     $('error_danger').removeClass('d-none');
