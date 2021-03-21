@@ -34,6 +34,7 @@ class Admin_Catalog_Sections extends Controller {
     public function index()
     {
         if ($sections = $this->model->getSectionsList() ){
+            $sections = $this->get_tree_for_array($sections);
             $this->view->sections_list = $sections;
         }
         parent::index();
@@ -48,7 +49,7 @@ class Admin_Catalog_Sections extends Controller {
         }
     }
 
-    public function get_tree_for_select($data, $level = 0, $pid = 0){
+    protected function get_tree_for_select($data, $level = 0, $pid = 0){
         foreach ($data as $row){
             if ($row['parent_id'] == $pid){
                 $this->tree_for_select .=
@@ -56,6 +57,30 @@ class Admin_Catalog_Sections extends Controller {
                     " data-dept-level=".$row["dept_level"].">"
                     .str_pad('', $level, '--').$row["name"]."</option>";
                 $this->get_tree_for_select($data, $level +1, $row['id'] );
+            }
+        }
+    }
+
+    protected function get_tree_for_array($data, $level = 0, $pid = 0 ){
+        $result = array();
+        foreach ($data as $row){
+            if ($row['parent_id'] == $pid){
+                $row['name'] = str_pad('', $level, '--').$row['name'];
+                $_res =  $this->get_tree_for_array($data, $level + 1, $row['id']);
+                $row['count_sections'] = count($_res);
+                $result[] = $row;
+                $result = array_merge($result, $_res);
+            }
+        }
+        return $result;
+    }
+
+    public function del($id){
+        if ($id > 0){
+            if ($this->model->del_section($id) ){
+                echo json_encode(array('success' => true));
+            }else{
+                echo json_encode(array('success' => false));
             }
         }
     }

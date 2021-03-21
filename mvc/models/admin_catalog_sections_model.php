@@ -25,5 +25,15 @@ class Admin_Catalog_Sections_Model extends Model{
             return false;
         }
     }
+
+    public function del_section($id){
+        $sth = $this->db->prepare("DELETE FROM sections WHERE id = :id ");
+        $sth->execute(array(':id' => $id));
+        if ( $sth->rowCount() > 0 ){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 

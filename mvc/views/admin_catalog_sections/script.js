@@ -17,7 +17,6 @@ function get_sections_list(){
 }
 
 function add_new_section() {
-    // console.log(123);
     form = $("#form_new_section");
 
     if (form[0].checkValidity() === false) {
@@ -42,4 +41,20 @@ function add_new_section() {
             }
         })
     }
+}
+
+function section_del(id){
+    console.log(123);
+
+    $.ajax({
+        data: {'id' : id},
+        url:"/admin_catalog_sections/del/"+id+"/",
+        dataType: "json",
+        type: "post",
+        success: function (json) {
+            if (json.success){
+                $('#table_sections_list tr[data-id="'+id+'"]').remove();
+            }
+        }
+    })
 }
