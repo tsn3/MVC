@@ -1,6 +1,7 @@
 <?php
 
 class Controller{
+
     public function __construct(){
         $this->view = new View;
         if (file_exists($_SERVER ['DOCUMENT_ROOT'].'/views/'.strtolower(get_class($this)).'/script.js' ) ){
@@ -18,5 +19,7 @@ class Controller{
     public function index(){
         $this->view->render(strtolower(get_class($this)));
     }
+
+
 
 }

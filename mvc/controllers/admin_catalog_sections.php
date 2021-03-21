@@ -1,6 +1,9 @@
 <?php
 
 class Admin_Catalog_Sections extends Controller {
+
+    protected $tree_for_select = '';
+
     public function __construct(){
         parent::__construct();
 
@@ -34,4 +37,26 @@ class Admin_Catalog_Sections extends Controller {
         }
         parent::index();
     }
+
+    public function get_section_list(){
+        if ($sections = $this->model->getSectionsList() ){
+
+           $this->get_tree_for_select($sections);
+
+            echo $this->tree_for_select;
+        }
+    }
+
+    public function get_tree_for_select($data, $level = 0, $pid = ''){
+        foreach ($data as $row){
+            if ($row['parent_id'] == $pid){
+                $this->tree_for_select .=
+                    "<option value=".$row["id"].
+                    " data-dept-level=".$row["dept_level"].">"
+                    .str_pad('', $level, '- ').$row["name"]."</option>";
+                $this->get_tree_for_select($data, $level +1, $row['id'] );
+            }
+        }
+    }
 }
+// <option value="id" data-dept-level="dl"> - - - name </option>

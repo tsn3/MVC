@@ -65,11 +65,7 @@
                             <div class="form-group">
                                 <label for="parent_section">Родительская категория</label>
                                 <select class="form-control" name="parent_section" id="parent_section">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                    <option value="0" data-dept-level='0'>.</option>
                                 </select>
                             </div>
                         </form>
