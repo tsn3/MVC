@@ -84,5 +84,14 @@ class Admin_Catalog_Sections extends Controller {
             }
         }
     }
+
+    public function get_sections_table(){
+        if ($sections = $this->model->getSectionsList() ){
+            $sections = $this->get_tree_for_array($sections);
+            $this->view->sections_list = $sections;
+
+            $this->view->render (strtolower(get_class($this)), 'table_sections');
+        }
+    }
 }
 // <option value="id" data-dept-level="dl"> - - - name </option>

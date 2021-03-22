@@ -1,4 +1,5 @@
 $(document).ready(function (){
+    $("#form_new_section").find('input').val('');
     new_section_modal.addEventListener('shown.bs.modal', function () {
         get_sections_list();
     })
@@ -8,8 +9,10 @@ function get_sections_list(){
     $.ajax({
         url:"/admin_catalog_sections/get_section_list/",
         type: "POST",
-        dataType: 'text',
+        dataType: 'html',
         success: function (html){
+            $("#parent_section").empty();
+            $("#parent_section").append('<option value="0" data-dept-level="-1">.</option>');
             $("#parent_section").append(html);
         }
     })
@@ -37,6 +40,7 @@ function add_new_section() {
                 }
                 if (json.success){
                     $('#new_section_modal').modal('hide');
+                    get_sections_table();
                 }
             }
         })
@@ -44,8 +48,6 @@ function add_new_section() {
 }
 
 function section_del(id){
-    console.log(123);
-
     $.ajax({
         data: {'id' : id},
         url:"/admin_catalog_sections/del/"+id+"/",
@@ -53,8 +55,23 @@ function section_del(id){
         type: "post",
         success: function (json) {
             if (json.success){
-                $('#table_sections_list tr[data-id="'+id+'"]').remove();
+                get_sections_table();
             }
         }
     })
 }
+
+function get_sections_table(){
+    $.ajax({
+        url:"/admin_catalog_sections/get_sections_table/",
+        data: {"ajax_call":'y'},
+        dataType: 'html',
+        success: function (html) {
+            $('#table_sections_list').remove();
+            $('#container_table_sections_list').append(html);
+        }
+    })
+}
+
+
+// "ajax_call":'y'
