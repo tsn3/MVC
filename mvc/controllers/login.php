@@ -31,7 +31,6 @@ class Login extends Controller
     }
 
     public function reg(){
-
         if (User::isLogin() ){
             header('location:'.'/account/');
             die;

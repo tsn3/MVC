@@ -20,7 +20,7 @@
             <td><?=$section['dept_level']?></td>
             <td><?=$section['parent_id']?></td>
             <td class="text-end">
-                <button type="button" class="btn btn-primary btn-sm">Изменить</button>
+                <button type="button" class="btn btn-primary btn-sm" onclick="show_modal_edit_section(<?=$section['id'] ?>)">Изменить</button>
                 <? if (! ($section['count_sections'] > 0) ) : ?>
                     <button type="button" class="btn btn-danger btn-sm" onclick="section_del(<?=$section['id']?>)" >Удалить</button>
                 <?endif?>

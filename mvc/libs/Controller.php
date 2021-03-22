@@ -19,7 +19,4 @@ class Controller{
     public function index(){
         $this->view->render(strtolower(get_class($this)));
     }
-
-
-
 }
