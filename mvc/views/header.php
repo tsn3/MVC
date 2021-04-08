@@ -1,3 +1,4 @@
+<?php use libs\User; ?>
 <!doctype html>
 <html>
     <head>

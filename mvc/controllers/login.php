@@ -1,4 +1,7 @@
 <?php
+namespace controllers;
+use libs\Controller;
+use libs\User;
 
 class Login extends Controller
 {
@@ -7,32 +10,34 @@ class Login extends Controller
         parent::__construct();
     }
 
-    public function login(){
-        if (isset($_POST['login']) && isset($_POST['password']) ) {
+    public function login()
+    {
+        if (isset($_POST['login']) && isset($_POST['password'])) {
             $login = htmlspecialchars($_POST['login']);
             $password = htmlspecialchars($_POST['password']);
 
-            if ($this->model->login($login, $password) ){
-
-                header('location:'.'/account/');
-            }else{
+            if ($this->model->login($login, $password)) {
+                header('location:' . '/account/');
+            } else {
                 $this->view->arResult['ERROR'] = "Неверный логин или пароль";
                 $this->index();
             }
-        }else{
+        } else {
             $this->view->arResult['ERROR'] = "Неверный логин или пароль";
             $this->index();
         }
     }
 
-    public function logout() {
+    public function logout()
+    {
         User::logout();
-        header('location:'.'/');
+        header('location:' . '/');
     }
 
-    public function reg(){
-        if (User::isLogin() ){
-            header('location:'.'/account/');
+    public function reg()
+    {
+        if (User::isLogin()) {
+            header('location:' . '/account/');
             die;
         }
 
@@ -44,35 +49,34 @@ class Login extends Controller
         $phone = htmlspecialchars($_REQUEST['phone']);
         $email = htmlspecialchars($_REQUEST['email']);
 
-        if ($login == ''){
+        if ($login == '') {
             $error['login'] = false;
         }
-        if ($pass_1 != $pass_2){
+        if ($pass_1 != $pass_2) {
             $error['pass'] = false;
         }
-        if ($pass_1 == ''){
+        if ($pass_1 == '') {
             $error['pass'] = false;
         }
-        if ($this->model->loginExist($login) ){
+        if ($this->model->loginExist($login)) {
             $error['login'] = false;
         }
-        if (count($error) > 1){
+        if (count($error) > 1) {
             echo json_encode($error);
             die;
         }
-        $data = array(
+        $data = array (
             ':login' => $login,
             ':password' => md5($pass_1),
             ':name' => $name,
             ':phone' => $phone,
             ':email' => $email
         );
-
-        if ($this->model->register($data) ){
+        if ($this->model->register($data)) {
             $this->model->login($login, $pass_1);
             echo json_encode(array('success' => true));
             die;
-        }else{
+        } else {
             echo json_encode(array('success' => false));
             die;
         }

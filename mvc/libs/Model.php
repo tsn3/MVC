@@ -1,7 +1,13 @@
 <?php
+namespace libs;
+use libs\Database;
 
-class Model{
-    public function __construct(){
+class Model
+{
+    public $db;
+
+    public function __construct()
+    {
         $this->db = new Database;
     }
 }

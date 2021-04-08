@@ -1,10 +1,9 @@
-<?php require_once $_SERVER ['DOCUMENT_ROOT'].'/views/header.php';?>
+<?php require_once $_SERVER ['DOCUMENT_ROOT'] . '/views/header.php';?>
 
 <div class="h2 px-2" >
     Управление категориями
 </div>
 <div id="container_table_sections_list">
-
     <table class="table table-striped" id="table_sections_list">
         <thead>
         <tr>
@@ -36,7 +35,6 @@
         <?endforeach;?>
         </tbody>
     </table>
-
 </div>
 <br/>
 <br/>
@@ -47,7 +45,6 @@
         </button>
     </div>
 </row>
-
 <!-- Modal New Section -->
     <div class="modal fade" id="new_section_modal" tabindex="-1" aria-labelledby="new_section_modal_title" aria-hidden="true">
         <div class="modal-dialog modal-dialogcentered modal-lg">
@@ -85,7 +82,6 @@
             </div>
         </div>
     </div>
-
     <!-- Modal Edit Section -->
     <div class="modal fade" id="edit_section_modal" tabindex="-1" aria-labelledby="edit_section_modal_title" aria-hidden="true">
         <div class="modal-dialog modal-dialogcentered modal-lg">
