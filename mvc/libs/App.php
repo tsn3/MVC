@@ -1,6 +1,5 @@
 <?php
 namespace libs;
-//use controllers\Index;
 
 class App{
     public function __construct()
@@ -22,7 +21,6 @@ class App{
 //            print_r($url);
             $className = '\\controllers\\' . ucfirst($url[0]);
             $controller = new $className();
-//            var_dump($controller);
 //    Вызов метода
             if (isset($url[1])) {
                 if (method_exists($controller, $url[1])) {

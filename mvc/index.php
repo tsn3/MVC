@@ -1,22 +1,20 @@
 <?php
+define("DBNAME", 'ck27434_mvc' );
+define("DBUSER", 'ck27434_mvc');
+define("DBPASS", 'mvcmvc');
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-function dump() {
-    echo '<pre>';
-
-    foreach (func_get_args() as $v) {
-        print_r($v);
-        echo PHP_EOL;
-        echo PHP_EOL;
+spl_autoload_register( function ($className) {
+    $className = ltrim($className, '\\');
+    $fileName  = '';
+    $namespace = '';
+    if ($lastNsPos = strrpos($className, '\\')) {
+        $namespace = substr($className, 0, $lastNsPos);
+        $className = substr($className, $lastNsPos + 1);
+        $fileName  = str_replace('\\', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR;
     }
+    $fileName .= str_replace('/', DIRECTORY_SEPARATOR, $className) . '.php';
 
-    echo '</pre>';
-}
+    require $fileName;
+});
 
-require_once 'libs/Autoloader.php';
-use libs\App;
-
-$app = new App;
+$app = new \libs\App();

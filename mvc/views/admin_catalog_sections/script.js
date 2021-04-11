@@ -1,3 +1,5 @@
+
+
 $(document).ready(function (){
     $("#form_new_section").find('input').val('');
     new_section_modal.addEventListener('shown.bs.modal', function () {
