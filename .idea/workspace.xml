@@ -2,42 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a1151d1-f43d-4b27-8be6-e3486031b6d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/controllers/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/controllers/account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/controllers/admin_catalog_sections.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/controllers/admin_catalog_sections.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/controllers/catalog.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/controllers/catalog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/controllers/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/controllers/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/controllers/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/controllers/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/libs/App.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/libs/App.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/libs/Autoloader.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/libs/Config.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/libs/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/libs/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/libs/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/libs/Database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/libs/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/libs/Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/libs/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/libs/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/libs/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/libs/View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvc/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/models/admin_catalog_sections_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/models/admin_catalog_sections_model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/models/catalog_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/models/catalog_model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/models/login_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/models/login_model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/public/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/public/js/custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/public/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/public/js/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/views/account/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/views/account/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/views/account/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/views/account/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/views/account/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/views/account/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/views/admin_catalog_sections/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/views/admin_catalog_sections/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/views/admin_catalog_sections/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/views/admin_catalog_sections/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/views/admin_catalog_sections/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/views/admin_catalog_sections/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/views/admin_catalog_sections/table_sections.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/views/admin_catalog_sections/table_sections.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvc/views/catalog/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/views/catalog/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/views/catalog/show_list/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/views/catalog/show_list/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/views/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/views/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/views/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/views/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/views/index/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/views/index/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvc/views/login/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/mvc/views/login/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +21,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/mvc/views/catalog/index.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/mvc/controllers/index.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/mvc/views/header.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/mvc/models/catalog_model.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/mvc/models/admin_catalog_sections_model.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/mvc/views/header_second.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/mvc/views/admin_catalog_sections/new.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/mvc/index.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4" />
   <component name="ProjectId" id="1qt78W2AG9vFlYLnfK3GMEJia6Z" />
   <component name="ProjectViewState">
@@ -60,8 +41,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../art.com/public_html" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mvc/views" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mvc/views" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -75,7 +61,12 @@
       <workItem from="1617893046082" duration="150000" />
       <workItem from="1617907406954" duration="119000" />
       <workItem from="1617957268673" duration="20028000" />
-      <workItem from="1618171114708" duration="675000" />
+      <workItem from="1618171114708" duration="2736000" />
+      <workItem from="1618213305930" duration="1544000" />
+      <workItem from="1618218017624" duration="17201000" />
+      <workItem from="1618243694394" duration="458000" />
+      <workItem from="1618297048015" duration="670000" />
+      <workItem from="1618297720320" duration="13502000" />
     </task>
     <servers />
   </component>
